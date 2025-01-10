@@ -1,7 +1,7 @@
 name: Run Telegram Music Bot
 
 on:
-  workflow_dispatch:  # Allows manual workflow trigger
+  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # Replace if your bot requires a different Python version
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
@@ -22,5 +22,4 @@ jobs:
 
       - name: Run the bot
         run: |
-          python main.py  # Replace main.py with your bot's main file
-          
+          python bot.py  # Replace with correct file name
