@@ -37,4 +37,3 @@ jobs:
         LOGGER_ID: ${{ secrets.LOGGER_ID }}
         MONGO_DB_URI: ${{ secrets.MONGO_DB_URI }}  # Ensure this is set
         STRING_SESSION: ${{ secrets.STRING_SESSION }}
-        OWNER_ID: ${{ secrets.OWNER_ID }}
