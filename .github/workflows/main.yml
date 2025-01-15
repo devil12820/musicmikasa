@@ -3,29 +3,26 @@ name: Telegram Music Bot
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # or your default branch
 
 jobs:
-  deploy-bot:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest  # You can also use 'ubuntu-20.04'
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # Make sure requirements.txt is in your repo
 
-      - name: Run Bot
-        run: |
-          python .github/workflows/main.yml
-          
+    - name: Start the bot
+      run: |
+        python3 -m AnonXMusic  # Make sure the bot starts correctly with this command
+        
