@@ -26,7 +26,8 @@ jobs:
       run: |
         python3 -m AnonXMusic
       env:
-        API_ID: ${{ secrets.API_ID }}  # Pass API_ID from GitHub Secrets
-        API_HASH: ${{ secrets.API_HASH }}  # Pass API_HASH from GitHub Secrets
-        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  # Pass BOT_TOKEN from GitHub Secrets
+        API_ID: ${{ secrets.API_ID }}
+        API_HASH: ${{ secrets.API_HASH }}
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        LOGGER_ID: ${{ secrets.LOGGER_ID }}  # Add LOGGER_ID from GitHub Secrets
         
