@@ -30,4 +30,5 @@ jobs:
         API_HASH: ${{ secrets.API_HASH }}
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         LOGGER_ID: ${{ secrets.LOGGER_ID }}
-        STRING_SESSION: ${{ secrets.STRING_SESSION_1 }}
+        MONGO_DB_URI: ${{ secrets.MONGO_DB_URI }}  # Ensure this is set
+        STRING_SESSION: ${{ secrets.STRING_SESSION }}
