@@ -54,3 +54,4 @@ jobs:
     - name: Run AnonXMusic Bot
       run: |
         python3 -m AnonXMusic
+        
