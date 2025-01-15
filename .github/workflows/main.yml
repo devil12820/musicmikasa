@@ -21,11 +21,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-
-    - name: Delete old session
-      run: |
-        rm -f /home/runner/work/Musicmikasa/Musicmikasa/cookies/cookies.txt
-
     - name: Start the bot
       run: |
         python3 -m AnonXMusic
@@ -34,5 +29,5 @@ jobs:
         API_HASH: ${{ secrets.API_HASH }}
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         LOGGER_ID: ${{ secrets.LOGGER_ID }}
-        MONGO_DB_URI: ${{ secrets.MONGO_DB_URI }}
+        MONGO_DB_URI: ${{ secrets.MONGO_DB_URI }}  # Ensure this is set
         STRING_SESSION: ${{ secrets.STRING_SESSION }}
