@@ -29,8 +29,5 @@ jobs:
         API_ID: ${{ secrets.API_ID }}
         API_HASH: ${{ secrets.API_HASH }}
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        ASSISTANT_API_ID: ${{ secrets.ASSISTANT_API_ID }}
-        ASSISTANT_API_HASH: ${{ secrets.ASSISTANT_API_HASH }}
-        ASSISTANT_BOT_TOKEN: ${{ secrets.ASSISTANT_BOT_TOKEN }}
-        ASSISTANT_SESSION_STRING: ${{ secrets.ASSISTANT_SESSION_STRING }}  # if needed
-        
+        LOGGER_ID: ${{ secrets.LOGGER_ID }}  # Add LOGGER_ID here
+        STRING_SESSION: ${{ secrets.ASSISTANT_SESSION_STRING }}  # if needed
