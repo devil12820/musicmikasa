@@ -33,11 +33,7 @@ jobs:
     # Step 4: Set environment variables (You can use GitHub Secrets here if needed)
     - name: Set environment variables
       run: |
-        echo "STRING_SESSION_1=${{ secrets.STRING_SESSION_1 }}" >> $GITHUB_ENV
-        echo "STRING_SESSION_2=${{ secrets.STRING_SESSION_2 }}" >> $GITHUB_ENV
-        echo "STRING_SESSION_3=${{ secrets.STRING_SESSION_3 }}" >> $GITHUB_ENV
-        echo "STRING_SESSION_4=${{ secrets.STRING_SESSION_4 }}" >> $GITHUB_ENV
-        echo "STRING_SESSION_5=${{ secrets.STRING_SESSION_5 }}" >> $GITHUB_ENV
+        echo "STRING_SESSION=${{ secrets.STRING_SESSION_1 }}" >> $GITHUB_ENV
         echo "API_ID=${{ secrets.API_ID }}" >> $GITHUB_ENV
         echo "API_HASH=${{ secrets.API_HASH }}" >> $GITHUB_ENV
         echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> $GITHUB_ENV
