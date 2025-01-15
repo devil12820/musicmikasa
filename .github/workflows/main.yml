@@ -1,49 +1,32 @@
-name: Deploy AnonXMusic Bot
+name: Telegram Music Bot
 
 on:
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
+      - main  # or your default branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-    # Step 1: Checkout the repository
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    # Step 2: Set up Python environment
-    - name: Set up Python 3.x
-      uses: actions/setup-python@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.10
+        python-version: '3.10'
 
-    # Step 3: Install required dependencies
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install python-dotenv pyrogram pytgcalls
 
-    # Step 4: Set environment variables (You can use GitHub Secrets here if needed)
-    - name: Set environment variables
-      run: |
-        echo "STRING_SESSION=${{ secrets.STRING_SESSION_1 }}" >> $GITHUB_ENV
-        echo "API_ID=${{ secrets.API_ID }}" >> $GITHUB_ENV
-        echo "API_HASH=${{ secrets.API_HASH }}" >> $GITHUB_ENV
-        echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> $GITHUB_ENV
-        echo "MONGO_DB_URI=${{ secrets.MONGO_DB_URI }}" >> $GITHUB_ENV
-        echo "LOGGER_ID=${{ secrets.LOGGER_ID }}" >> $GITHUB_ENV
-        echo "OWNER_ID=${{ secrets.OWNER_ID }}" >> $GITHUB_ENV
-        echo "SUPPORT_CHAT=${{ secrets.SUPPORT_CHAT }}" >> $GITHUB_ENV
-        
-    # Step 5: Run the bot
-    - name: Run AnonXMusic Bot
+    - name: Start the bot
       run: |
         python3 -m AnonXMusic
-        
+      env:
+        API_ID: ${{ secrets.API_ID }}
+        API_HASH: ${{ secrets.API_HASH }}
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        LOGGER_ID: ${{ secrets.LOGGER_ID }}  # Add LOGGER_ID here
