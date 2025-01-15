@@ -13,19 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.9"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
 
-    - name: Install Dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
 
-    - name: Run Bot
-      run: |
-        python workflows/main.py
-        
+      - name: Run Bot
+        run: |
+          python main.py
+          
