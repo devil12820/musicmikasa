@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # You can also use 'ubuntu-20.04'
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -20,9 +20,13 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt  # Make sure requirements.txt is in your repo
+        pip install -r requirements.txt
 
     - name: Start the bot
       run: |
-        python3 -m AnonXMusic  # Make sure the bot starts correctly with this command
+        python3 -m AnonXMusic
+      env:
+        API_ID: ${{ secrets.API_ID }}  # Pass API_ID from GitHub Secrets
+        API_HASH: ${{ secrets.API_HASH }}  # Pass API_HASH from GitHub Secrets
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  # Pass BOT_TOKEN from GitHub Secrets
         
